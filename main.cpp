@@ -1,8 +1,13 @@
 #include <iostream>
 
-#include "Dictionary/Dictionary.h"
+
+template<typename ...Ts>
+void println(Ts...args) {
+    ((std::cout << args), ...) << std::endl;
+}
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    println("Hello, World!");
     return 0;
 }
