@@ -1,3 +1,1 @@
-git add .
-git commit -m "general init"
-git push origin master:main
+"E:\ProgrammingProjects\PyCharmProjects\dajianggou_tutorial\.venv\Scripts\python.exe" git_push.py
