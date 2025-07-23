@@ -3,7 +3,20 @@ project(cpp_start_project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(cpp_start_project main.cpp)
+# 添加 Lua 源文件
+file(GLOB LUA_SOURCES "lua/src/*.c")
+
+# 排除解释器和编译器（可选）
+list(REMOVE_ITEM LUA_SOURCES "lua/src/lua.c" "lua/src/luac.c")
+
+# 添加 Lua 头文件目录
+include_directories(lua/include)
+
+# 添加你的项目文件
+add_executable(cpp_start_project
+        main.cpp
+        ${LUA_SOURCES}
+)
 
 # 自动查找 singles 目录中的所有 .cpp 文件
 file(GLOB SINGLE_SOURCES "singles/*.cpp")
